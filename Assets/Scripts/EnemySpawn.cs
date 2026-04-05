@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
@@ -20,7 +18,7 @@ public class EnemySpawn : MonoBehaviour
 
     void SpawnEnemy()
     {
-        if (GameObject.FindObjectOfType<Enemy>() == null)
+        if (FindAnyObjectByType<Enemy>() == null)
         {
             randomPoint = new Vector2Int(Random.Range(bottomLeft.x, bottomRight.x), Random.Range(bottomLeft.y, topLeft.y));
             randomPoint = CalculatePoint(randomPoint);

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -72,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (rb.velocity.magnitude >0.2)
+        if (rb.linearVelocity.magnitude >0.2)
         {
             isMoving = true;
         }
@@ -83,16 +81,16 @@ public class PlayerMovement : MonoBehaviour
         switch (movingDir)
         {
             case Direction.north:
-                rb.velocity = new Vector2(0, speed*Time.fixedDeltaTime);
+                rb.linearVelocity = new Vector2(0, speed*Time.fixedDeltaTime);
                 break;
             case Direction.south:
-                rb.velocity = new Vector2(0, -speed * Time.fixedDeltaTime);
+                rb.linearVelocity = new Vector2(0, -speed * Time.fixedDeltaTime);
                 break;
             case Direction.east:
-                rb.velocity = new Vector2(speed * Time.fixedDeltaTime, 0);
+                rb.linearVelocity = new Vector2(speed * Time.fixedDeltaTime, 0);
                 break;
             case Direction.west:
-                rb.velocity = new Vector2(-speed * Time.fixedDeltaTime, 0);
+                rb.linearVelocity = new Vector2(-speed * Time.fixedDeltaTime, 0);
                 break;
         }
     }
